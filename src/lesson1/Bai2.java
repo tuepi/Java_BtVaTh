@@ -22,7 +22,7 @@ public class Bai2 {
             } else {
                 System.out.println("Nhập lại");
             }
-            diem = 0;
+//            diem = 0;
         }
 
     }
