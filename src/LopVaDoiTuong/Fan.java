@@ -21,9 +21,6 @@ public class Fan {
 
         Fan fan2 = new Fan();
         fan2.setSpeed(fan2.MEDIUM);
-//        fan2.setRadius(5);
-//        fan2.setColor("yellow");
-        fan2.setOn(false);
 
         System.out.println(fan1.toString());
         System.out.println(fan2.toString());

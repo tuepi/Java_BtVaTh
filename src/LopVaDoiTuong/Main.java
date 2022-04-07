@@ -11,7 +11,7 @@ public class Main {
         double c = scanner.nextDouble();
         PTBacHai ptBacHai = new PTBacHai(a,b,c);
 
-        System.out.println("Phương trình có dạng: " + a +" * x^2 + " + b + " * x + " + c + " = 0");
+        System.out.println("Phương trình có dạng: " + (int)a +" * x^2 + " + (int)b + " * x + " + (int)c + " = 0");
         double delta = ptBacHai.getDiscriminant();
         System.out.println("Delta = " + delta);
         if (delta > 0) {
