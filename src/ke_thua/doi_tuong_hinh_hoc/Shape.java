@@ -30,10 +30,7 @@ public class Shape {
 
     @Override
     public String toString() {
-        return "Hình có màu là "
-                + getColor()
-                + " và "
-                + (isFilled() ? "đã tô." : "chưa tô.");
+        return "Hình " + (isFilled() ? "đã tô màu " + getColor() + "." : "chưa được tô màu.");
     }
 }
 
