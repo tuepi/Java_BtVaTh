@@ -3,9 +3,7 @@ package ke_thua.triange;
 import ke_thua.doi_tuong_hinh_hoc.Shape;
 
 public class Triangle extends Shape {
-    private double side1 = 1.0;
-    private double side2 = 1.0;
-    private double side3 = 1.0;
+    private double side1, side2, side3;
 
     public Triangle(){
     }

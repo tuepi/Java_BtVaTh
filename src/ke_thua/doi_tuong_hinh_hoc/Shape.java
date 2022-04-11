@@ -39,7 +39,7 @@ class ShapeTest {
         Shape shape = new Shape();
         System.out.println(shape);
 
-        shape = new Shape("đỏ", false);
+        shape = new Shape("Đỏ", false);
         System.out.println(shape);
     }
 }
