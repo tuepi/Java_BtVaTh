@@ -1,4 +1,4 @@
-package ke_thua.animal_interface_edible;
+package abstract_class_and_interface.animal_interface_edible;
 
 public abstract class Animal {
     public abstract String makeSound();
@@ -7,6 +7,8 @@ public abstract class Animal {
 interface Edible {
     String howtoEat();
 }
+
+
 class Tiger extends Animal {
     public String makeSound(){
         return "Tao là Hổ đây!";
