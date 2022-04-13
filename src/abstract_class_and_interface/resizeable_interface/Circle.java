@@ -1,4 +1,4 @@
-package ke_thua.doi_tuong_hinh_hoc;
+package abstract_class_and_interface.resizeable_interface;
 
 public class Circle extends Shape {
     private double radius = 1.0;
@@ -34,18 +34,11 @@ public class Circle extends Shape {
     public String toString() {
         return  "Hình tròn có bán kính = "
                 + getRadius() + ", "
-                + super.toString() + " Diện tích: " + getArea() + ", Chu vi: " + getPerimeter() + "." ;
+                + super.toString();
+    }
+
+    @Override
+    public void resize(double percent) {
+        this.setRadius(getRadius()*percent);
     }
 }
- class CircleTest{
-     public static void main(String[] args) {
-         Circle circle = new Circle();
-         System.out.println(circle);
-
-         circle = new Circle(3.5);
-         System.out.println(circle);
-
-         circle = new Circle("nâu", false, 3.5);
-         System.out.println(circle);
-     }
- }
