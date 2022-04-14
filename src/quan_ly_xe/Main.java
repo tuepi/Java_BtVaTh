@@ -14,12 +14,17 @@ public class Main {
 
         System.out.println(quanLyXeMay.timKiem("Suxibo"));
 
-        quanLyXeMay.xoa("Wav");
-        quanLyXeMay.inTatCa();
-
-        XeMay xm4 = new XeMay("Cup", "Vàng", "Củ chuối", 1900, 400);
-        quanLyXeMay.sua("Suxibo", xm4);
-        System.out.println("\nSau khi sửa: ");
-        quanLyXeMay.inTatCa();
+        System.out.println("Sau khi xóa: ");
+        quanLyXeMay.xoa("Wave");
+        quanLyXeMay.inTatCa2();
+//
+//        XeMay xm4 = new XeMay("Cup", "Vàng", "Củ chuối", 1900, 400);
+//        quanLyXeMay.sua("Suxibo", xm4);
+//        System.out.println("\nSau khi sửa: ");
+//        quanLyXeMay.inTatCa();
+//
+//        quanLyXeMay.sapXep();
+//        System.out.println("\nSau khi sắp xếp");
+//        quanLyXeMay.inTatCa();
     }
 }

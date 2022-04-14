@@ -1,6 +1,6 @@
 package quan_ly_xe;
 
-public class XeMay extends PhuongTien{
+public class XeMay extends PhuongTien implements Comparable<XeMay>{
     private int dungTich;
 
     public XeMay(){
@@ -24,10 +24,15 @@ public class XeMay extends PhuongTien{
     }
 
     @Override
+    public int compareTo(XeMay o) {
+        return this.getGia() - o.getGia();
+    }
+
+    @Override
     public String toString() {
-        return "Xe Máy { Tên: " + getTen()
-                + ", Hãng: " + getHang()
+        return "Xe Máy {Hãng: " + getHang()
                 + ", Màu: " + getMau()
+                + ", Tên: " + getTen()
                 + ", Giá: " + getGia()
                 + ", Dung Tích: " + dungTich +
                 '}' ;
