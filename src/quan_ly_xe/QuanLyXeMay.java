@@ -22,7 +22,7 @@ public class QuanLyXeMay implements QuanLy<XeMay>{
         if (viTri != -1){
             danhSach[viTri] = xeMay;
         } else {
-            System.out.println("Không tìm thấy!!!");
+            System.out.println("Không tìm thấy xe cần sửa!!!");
         }
 
     }
@@ -39,7 +39,7 @@ public class QuanLyXeMay implements QuanLy<XeMay>{
                 danhSachXoa[i] = danhSach[i + 1];
             }
         } else {
-            System.out.println("Không tìm thấy!!!");
+            System.out.println("Không tìm thấy xe cần xóa!!!");
         }
     }
 
