@@ -30,7 +30,7 @@ public class Main {
             }
         }
         System.out.println("Sau khi thay đổi: ");
-        long rd = Math.round(Math.random()*100);
+        int rd = (int)Math.round(Math.random()*100);
         System.out.println("Random = " + rd);
         for (Shape i : shapes) {
             System.out.println(i.toString());

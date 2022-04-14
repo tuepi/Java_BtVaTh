@@ -10,7 +10,7 @@ public class Students {
         this.name = name;
     }
     protected void setClasses(String classes){
-        this.classes =classes;
+        this.classes = classes;
     }
 
     @Override

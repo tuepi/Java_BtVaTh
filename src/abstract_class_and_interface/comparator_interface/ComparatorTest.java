@@ -18,7 +18,6 @@ public class ComparatorTest {
             System.out.println(circle);
 
         }
-        Arrays.sort(circles);
 
         CircleComparator c = new CircleComparator();
         Arrays.sort(circles, c);
