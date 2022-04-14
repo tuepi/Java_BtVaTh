@@ -1,16 +1,16 @@
 package demo.test_oop;
 
-public class XeMay extends PhuongTien{
+public class XeHoi extends PhuongTien{
     private int dungTich;
 
-    public XeMay() {
+    public XeHoi() {
     }
 
-    public XeMay(int dungTich) {
+    public XeHoi(int dungTich) {
         this.dungTich = dungTich;
     }
 
-    public XeMay(String hang, String mau, String ten, int gia, int dungTich) {
+    public XeHoi(String hang, String mau, String ten, int gia, int dungTich) {
         super(hang, mau, ten, gia);
         this.dungTich = dungTich;
     }

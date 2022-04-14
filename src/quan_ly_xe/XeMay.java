@@ -24,17 +24,17 @@ public class XeMay extends PhuongTien implements Comparable<XeMay>{
     }
 
     @Override
-    public int compareTo(XeMay o) {
-        return this.getGia() - o.getGia();
-    }
-
-    @Override
     public String toString() {
-        return "Xe Máy {Hãng: " + getHang()
+        return "Xe Máy { Tên: " + getTen()
+                + ", Hãng: " + getHang()
                 + ", Màu: " + getMau()
-                + ", Tên: " + getTen()
                 + ", Giá: " + getGia()
                 + ", Dung Tích: " + dungTich +
                 '}' ;
+    }
+
+    @Override
+    public int compareTo(XeMay o) {
+        return this.getGia() - o.getGia();
     }
 }

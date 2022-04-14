@@ -1,6 +1,6 @@
 package quan_ly_xe;
 
-public class XeHoi extends PhuongTien{
+public class XeHoi extends PhuongTien implements Comparable<XeHoi>{
     private int soCho;
 
     public XeHoi(){
@@ -23,4 +23,8 @@ public class XeHoi extends PhuongTien{
         this.soCho = soCho;
     }
 
+    @Override
+    public int compareTo(XeHoi o) {
+        return this.getGia() - o.getGia();
+    }
 }

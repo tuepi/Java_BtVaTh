@@ -1,6 +1,6 @@
 package demo.test_oop;
 
-public class QuanLyXeMay extends XeMay implements QuanLy<QuanLyXeMay>{
+public class QuanLyXeMay extends XeHoi implements QuanLy<QuanLyXeMay>{
     QuanLyXeMay arrays = new QuanLyXeMay();
     @Override
     public void them(QuanLyXeMay quanLyXeMay) {
