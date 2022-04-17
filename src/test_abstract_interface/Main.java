@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        StudentManage studentManage = new StudentManage();
+        ManageStudent studentManage = new ManageStudent();
         Student student1 = new Student(1, 24, "Kiên", 5);
         Student student2 = new Student(5, 23, "Hưng", 4);
         Student student3 = new Student(2, 28, "Sơn", 7);

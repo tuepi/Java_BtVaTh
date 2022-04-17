@@ -1,8 +1,6 @@
 package test_abstract_interface;
 
-import quan_ly_xe.QuanLy;
-
-public class StudentManage implements Manage<Student> {
+public class ManageStudent implements Manage<Student> {
 
     Student[] students = new Student[3];
     private int size = 0;

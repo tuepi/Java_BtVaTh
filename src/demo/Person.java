@@ -38,6 +38,15 @@ class Main {
                 System.out.println("h");
             }
         };
-
+        Person b = new Person() {
+            @Override
+            public void hienThi() {
+                System.out.println("ádf");
+            }
+        };
+        b.hienThi();
+        b.setName("nam");
+        System.out.println(b.getName());
+        a.hienThi();
     }
 }

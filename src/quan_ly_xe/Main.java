@@ -36,5 +36,6 @@ public class Main {
         System.out.println("\nDanh sách sau khi xóa Wave: ");
         quanLyXeMay.xoa("Wave");
         quanLyXeMay.inSauXoa();
+
     }
 }
