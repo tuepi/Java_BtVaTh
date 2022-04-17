@@ -101,30 +101,36 @@ public class QuanLySP {
     }
 
     public void them() {
-        while (check()) {
+       do {
             SanPham sp = nhapSP();
             int viTri = timKiemViTriTheoTen(sp.getTen());
             if (viTri != -1) {
                 System.out.println("Đã tồn tại Sản Phẩm (cùng tên).\nNhập lại>>>");
                 them();
+            } else {
+                sanPhams.add(sp);
+                System.out.print("Đã thêm vào danh sách ");
+                System.out.println("Sản Phẩm thứ " + (sanPhams.size()) + " {" + sp + "}");
+                System.out.print("Tiếp tục thêm Sản Phẩm ? (Y / N) : ");
+                tiepTuc();
             }
-            sanPhams.add(sp);
-            System.out.print("Đã thêm vào danh sách ");
-            System.out.println("Sản Phẩm thứ " + (sanPhams.size()) + " {" + sp + "}");
-            tiepTuc();
         }
+       while (tiepTuc());
     }
 
-    public void tiepTuc() {
-        System.out.print("Có tiếp tục thêm Sản Phẩm hay không? (Y / N): ");
+    public boolean tiepTuc() {
+//        System.out.print("Có tiếp tục thêm Sản Phẩm hay không? (Y / N): ");
         String traLoi = sc.nextLine().toLowerCase(Locale.ROOT);
         if (traLoi.equals("y")) {
             them();
+            return true;
         } else if (traLoi.equals("n")) {
             menu();
+            return false;
         } else {
-            System.out.print("Nhập lại lựa chọn >>>");
+            System.out.print("Nhập lại lựa chọn (Y / N) >>>");
             tiepTuc();
+            return true;
         }
     }
 
@@ -178,11 +184,12 @@ public class QuanLySP {
             System.out.println("Sẽ sửa Sản Phẩm: {" + sanPhams.get(viTriSua) + "}");
             while (true) {
                 System.out.println("Bạn cần sửa thông tin nào?");
-                System.out.println("1. ID.");
-                System.out.println("2. Tên Sản Phẩm.");
+                System.out.println("1. Tên Sản Phẩm.");
+                System.out.println("2. ID.");
                 System.out.println("3. Nhãn Hiệu.");
                 System.out.println("4. Giá Sản Phẩm.");
                 System.out.println("5. Tất cả.");
+                System.out.println("0. Thoát ra Menu.");
                 System.out.print("Nhập lựa chọn>>>");
                 int luaChon = Integer.parseInt(sc.nextLine());
                 System.out.print("Sửa lại: ");
@@ -209,13 +216,17 @@ public class QuanLySP {
                         System.out.println("Đã sửa Sản Phẩm yêu cầu thành: " + sp);
                         sanPhams.set(viTriSua, sp);
                         break;
+                    case 0 :
+                        menu();
+                        break;
                     default:
-                        System.out.print("Nhập lại Lựa chọn >>> ");
+                        System.out.print("Nhập lại Lựa chọn 0 => 5 : ");
                 }
             }
         } else {
             System.out.println("Không có tên Sản Phẩm " + ten + " trong danh sách.");
             //Yêu cầu nhập lại hoặc thoát ra Menu chủ
+
         }
     }
 
