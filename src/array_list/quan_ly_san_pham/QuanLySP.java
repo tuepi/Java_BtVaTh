@@ -4,6 +4,7 @@ import java.util.*;
 
 public class QuanLySP {
     private ArrayList<SanPham> sanPhams = new ArrayList<>();
+    ManageUser manageUser = new ManageUser();
 
     public QuanLySP(ArrayList<SanPham> sanPhams) {
         this.sanPhams = sanPhams;
@@ -62,8 +63,8 @@ public class QuanLySP {
                     display();
                     break;
                 case 0:
-                    System.exit(0);
-                    //trỏ đến menu quản lý người dùng
+                    manageUser.manage();
+                    break;
                 default:
                     System.out.println("Xin lựa chọn từ 0 >>> 8");
             }

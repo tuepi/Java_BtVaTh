@@ -1,13 +1,17 @@
 package demo.dangnhap_dangky;
 
 import array_list.quan_ly_san_pham.QuanLySP;
+import array_list.quan_ly_san_pham.User;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class QLND {
+
+
     ArrayList<ND> ndList = new ArrayList<>();
+    ND user;
 
     public QLND() {
     }
@@ -15,12 +19,9 @@ public class QLND {
 
     Scanner sc = new Scanner(System.in);
 
-    public static void main(String[] args) {
-        QLND qlnd = new QLND();
-        qlnd.menu();
-    }
 
     public void menu() {
+
         while (true) {
             System.out.println("====MENU====");
             System.out.println("1. ĐN");
@@ -34,7 +35,6 @@ public class QLND {
             switch (luaChon) {
                 case 1:
                     dangNhap();
-
                     break;
                 case 2:
                     System.out.println("Mời Bạn Đăng Ký >>>");
@@ -77,11 +77,14 @@ public class QLND {
 
                         switch (luaChon1) {
                             case 1:
-                                System.out.println("Tên tài khoản: " ); // hiển thị tài khoản người dùng
+                                System.out.println("Tên tài khoản: " + user.getTen());
+                                System.out.println("Mật khẩu: " + user.getPass());
                                 break;
                             case 2:
-                                ;
-                                // chỉnh sửa mật khẩu
+                                System.out.print("Nhập Mật Khẩu mới: ");
+                                String pass = sc.nextLine();
+                                user.setPass(pass);
+                                System.out.println("Đã sửa xong.");
                                 break;
                             case 0:
                                 System.exit(0);
@@ -125,30 +128,26 @@ public class QLND {
         }
     }
 
-    public int timVT(String ten){
-        return -1;
-    }
-
     public void dangNhap() {
         System.out.println("Mời bạn đăng nhập>>");
         System.out.println("Nhập tên: ");
         String ten = sc.nextLine();
         System.out.println("Nhập pass: ");
         String pass = sc.nextLine();
-        int dem = 0;
         for (int i = 0; i < ndList.size(); i++) {
             if (ndList.get(i).getTen().equals(ten) && ndList.get(i).getPass().equals(pass)) {
-//                ND hienTai = new ND(ten, pass);
                 System.out.println("Đăng nhập thành công.");
-                dem++;
+                user = new ND(ten, pass);
                 ql();
-                break;
+                return;
             }
         }
-        if (dem == 0) {
-            System.out.println("Không có tài khoản.");
-            menu();
-        }
+        System.out.println("Không có tài khoản.");
+        menu();
+    }
 
+    public static void main(String[] args) {
+        QLND qlnd = new QLND();
+        qlnd.menu();
     }
 }

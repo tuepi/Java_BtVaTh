@@ -4,8 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        QuanLySP quanLySP = new QuanLySP();
-        quanLySP.menu();
-
+        ManageUser manageUser = new ManageUser();
+        manageUser.menu();
     }
 }
