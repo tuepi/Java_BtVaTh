@@ -24,7 +24,7 @@ public class QLND {
         while (true) {
             System.out.println("====MENU====");
             System.out.println("1. ĐN");
-            System.out.println("2. DK");
+            System.out.println("2. ĐK");
             System.out.println("0. Thoát.");
             System.out.println("------------------------");
             System.out.print("Nhập lựa chọn: ");
@@ -34,9 +34,10 @@ public class QLND {
             switch (luaChon) {
                 case 1:
                     dangNhap();
-                    ql();
+
                     break;
                 case 2:
+                    System.out.println("Mời Bạn Đăng Ký >>>");
                     dangKy();
                     break;
                 case 0:
@@ -127,6 +128,7 @@ public class QLND {
     public int timVT(String ten){
         return -1;
     }
+
     public void dangNhap() {
         System.out.println("Mời bạn đăng nhập>>");
         System.out.println("Nhập tên: ");
@@ -136,14 +138,16 @@ public class QLND {
         int dem = 0;
         for (int i = 0; i < ndList.size(); i++) {
             if (ndList.get(i).getTen().equals(ten) && ndList.get(i).getPass().equals(pass)) {
-//                ND nd = new ND(ten, pass);
+//                ND hienTai = new ND(ten, pass);
                 System.out.println("Đăng nhập thành công.");
                 dem++;
+                ql();
                 break;
             }
         }
         if (dem == 0) {
             System.out.println("Không có tài khoản.");
+            menu();
         }
 
     }
