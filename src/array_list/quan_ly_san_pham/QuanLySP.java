@@ -4,7 +4,6 @@ import java.util.*;
 
 public class QuanLySP {
     private ArrayList<SanPham> sanPhams = new ArrayList<>();
-    ManageUser manageUser = new ManageUser();
 
     public QuanLySP(ArrayList<SanPham> sanPhams) {
         this.sanPhams = sanPhams;
@@ -22,18 +21,35 @@ public class QuanLySP {
     }
 
     Scanner sc = new Scanner(System.in);
+
+    String menu = """
+            ====================MENU====================
+            1.              THÊM SẢN PHẨM               | 
+            2.            HIỂN THỊ DANH SÁCH            |
+            3.            TÌM KIẾM THEO TÊN             |
+            4.            TÌM THEO KHOẢNG GIÁ           |
+            5.               SỬA SẢN PHẨM               |
+            6.               XÓA SẢN PHẨM               |
+            7.             SẮP XẾP THEO GIÁ             |
+                                                        |
+            0.               >>>THOÁT<<<                |
+            --------------------------------------------
+            """;
+
+    String menuEdit = """
+            =============THÔNG TIN CẦN SỬA==============
+            1.             TÊN SẢN PHẨM                 | 
+            2.             ID SẢN PHẨM                  |
+            3.             NHÃN HIỆU                    |
+            4.             GIÁ SẢN PHẨM                 |
+            5.             TẤT CẢ THÔNG TIN             |
+            0.             >>>THOÁT<<<                  |
+            --------------------------------------------
+            """;
+
     public void menu() {
         do {
-            System.out.println("==========MENU=========");
-            System.out.println("1. Thêm Sản Phẩm.");
-            System.out.println("2. Hiển thị Danh Sách.");
-            System.out.println("3. Tìm Kiếm theo Tên.");
-            System.out.println("4. Hiển thị Sản Phẩm theo khoảng Giá.");
-            System.out.println("5. Sửa Sản Phẩm.");
-            System.out.println("6. Xóa Sản Phẩm.");
-            System.out.println("7. Sắp Xếp Sản Phẩm theo Giá.");
-            System.out.println("0. Thoát.");
-            System.out.println("------------------------");
+            System.out.println(this.menu);
             System.out.print("Nhập lựa chọn: ");
             int luaChon = Integer.parseInt(sc.nextLine());
             System.out.println("------------------------");
@@ -63,7 +79,7 @@ public class QuanLySP {
                     display();
                     break;
                 case 0:
-                    manageUser.manage();
+                    Main.manageUser.manage();
                     break;
                 default:
                     System.out.println("Xin lựa chọn từ 0 >>> 8");
@@ -127,7 +143,6 @@ public class QuanLySP {
     }
 
     public boolean tiepTuc() {
-//        System.out.print("Có tiếp tục thêm Sản Phẩm hay không? (Y / N): ");
         String traLoi = sc.nextLine().toLowerCase(Locale.ROOT);
         System.out.println("------------------------");
         if (traLoi.equals("y")) {
@@ -205,14 +220,7 @@ public class QuanLySP {
             System.out.println("Sẽ sửa Sản Phẩm: {" + sanPhams.get(viTriSua) + "}");
             System.out.println("------------------------");
             while (true) {
-                System.out.println("Bạn cần sửa thông tin nào?");
-                System.out.println("1. Tên Sản Phẩm.");
-                System.out.println("2. ID.");
-                System.out.println("3. Nhãn Hiệu.");
-                System.out.println("4. Giá Sản Phẩm.");
-                System.out.println("5. Tất cả.");
-                System.out.println("0. Thoát ra Menu.");
-                System.out.println("------------------------");
+                System.out.println(this.menuEdit);
                 System.out.print("Nhập lựa chọn >>> ");
                 int luaChon = Integer.parseInt(sc.nextLine());
                 System.out.println("------------------------");
@@ -298,6 +306,10 @@ public class QuanLySP {
     }
 
     public void display() {
+        if (sanPhams.size() <= 0) {
+            System.out.println("Danh sách trống!!!");
+            menu();
+        }
         System.out.println("Danh Sách Sản Phẩm: ");
         for (int i = 0; i < sanPhams.size(); i++) {
             System.out.println("Sản phẩm " + (i + 1) + ": {" + sanPhams.get(i) + "}");

@@ -8,11 +8,30 @@ public class ManageUser {
     ArrayList<User> users = new ArrayList<>();
     User user;
 
-    //    String menu = """
-//            -------------------Menu-------------------
-//            1. DDawng nhaapj
-//
-//            """
+    String menu1 = """
+            ====================MENU====================
+            1.                ĐĂNG NHẬP                 | 
+            2.                ĐĂNG KÝ                   |
+            0.               >>>THOÁT<<<                |
+            --------------------------------------------
+            """;
+
+    String menu2 =  """
+            ==================QUẢN LÝ===================
+            1.      ĐẾN TRANG QUẢN LÝ SẢN PHẨM          | 
+            2.          THÔNG TIN TÀI KHOẢN             |
+            0.              >>>THOÁT<<<                 |
+            --------------------------------------------
+            """;
+
+    String menu3 = """
+            =================TÀI KHOẢN==================
+            1.           HIỂN THỊ TÀI KHOẢN             | 
+            2.           CHỈNH SỬA MẬT KHẨU             |
+            0.              >>>THOÁT<<<                 |
+            --------------------------------------------
+            """;
+
     public ManageUser(ArrayList<User> users) {
         this.users = users;
     }
@@ -24,13 +43,8 @@ public class ManageUser {
 
     public void menu() {
         while (true) {
-            System.out.println("====MENU====");
-            System.out.println("1. Đăng Nhập.");
-            System.out.println("2. Đăng Ký.");
-            System.out.println("0. Thoát.");
-            System.out.println("------------------------");
+            System.out.println(this.menu1);
             System.out.print("Nhập lựa chọn >>> ");
-
             int choice = Integer.parseInt(sc.nextLine());
             System.out.println("------------------------");
 
@@ -86,10 +100,11 @@ public class ManageUser {
         while (pass != pass1) {
             System.out.print("Nhập Lại Mật Khẩu: ");
             pass1 = sc.nextLine();
-            if (pass1.equals(pass)) {
+            if (pass.equals(pass1)) {
                 System.out.println(">>>ĐĂNG KÝ THÀNH CÔNG<<<");
                 User user = new User(name, pass);
                 users.add(user);
+                menu();
                 break;
             }
         }
@@ -97,11 +112,7 @@ public class ManageUser {
 
     public void manage() {
         while (true) {
-            System.out.println("====Quản Lý====");
-            System.out.println("1. Đến trang quản lý SP.");
-            System.out.println("2. Xem Thông Tin Tài Khoản.");
-            System.out.println("0. Thoát.");
-            System.out.println("------------------------");
+            System.out.println(this.menu2);
             System.out.print("Nhập lựa chọn: ");
             int choice = Integer.parseInt(sc.nextLine());
             System.out.println("------------------------");
@@ -113,11 +124,7 @@ public class ManageUser {
                     break;
                 case 2:
                     while (true) {
-                        System.out.println("====Tài khoản====");
-                        System.out.println("1. Hiển thị tài khoản.");
-                        System.out.println("2. Chỉnh sửa Mật khẩu");
-                        System.out.println("0. Thoát.");
-                        System.out.println("------------------------");
+                        System.out.println(this.menu3);
                         System.out.print("Nhập lựa chọn: ");
                         int choice1 = Integer.parseInt(sc.nextLine());
                         System.out.println("------------------------");
@@ -134,7 +141,6 @@ public class ManageUser {
                                 System.out.println("Đã sửa xong.");
                                 break;
                             case 0:
-//                                System.exit(0);
                                 manage();
                                 break;
                             default:
@@ -142,7 +148,6 @@ public class ManageUser {
                         }
                     }
                 case 0:
-//                    System.exit(0);
                     menu();
                     break;
                 default:

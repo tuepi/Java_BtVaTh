@@ -9,6 +9,15 @@ import java.util.Scanner;
 
 public class QLND {
 
+    String menu = """
+            ==================MENU===================
+            1.              ĐĂNG NHẬP                | 
+            2.              ĐĂNG KÝ                  |
+            0.              THOÁT                    |
+            -----------------------------------------
+            Nhập lựa chọn >>>                        |
+
+            """;
 
     ArrayList<ND> ndList = new ArrayList<>();
     ND user;
@@ -23,12 +32,9 @@ public class QLND {
     public void menu() {
 
         while (true) {
-            System.out.println("====MENU====");
-            System.out.println("1. ĐN");
-            System.out.println("2. ĐK");
-            System.out.println("0. Thoát.");
-            System.out.println("------------------------");
-            System.out.print("Nhập lựa chọn: ");
+            String menu1 = this.menu;
+            System.out.println(menu1);
+
             int luaChon = Integer.parseInt(sc.nextLine());
             System.out.println("------------------------");
 
