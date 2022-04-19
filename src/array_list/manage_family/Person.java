@@ -49,19 +49,6 @@ public class Person {
     }
     Scanner sc = new Scanner(System.in);
 
-    public Person create(){
-        System.out.print("Nhập Tên: ");
-        String name = sc.nextLine();
-        System.out.print("Nhập Nghề Nghiệp: ");
-        String job = sc.nextLine();
-        System.out.print("Nhập Tuổi: ");
-        int age = Integer.parseInt(sc.nextLine());
-        System.out.print("Nhập CCCD: ");
-        int id = Integer.parseInt(sc.nextLine());
-
-        return new Person(name, job, age, id);
-    }
-
     @Override
     public String toString() {
         return "Thành viên : {" +

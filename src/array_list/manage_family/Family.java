@@ -4,17 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Family extends Person{
+public class Family{
     private String address;
     private int amountOfPeople;
     List<Person> personList = new ArrayList<>();
+
     Scanner sc = new Scanner(System.in);
 
     public Family() {
     }
 
-    public Family(String name, String job, int age, int id, String address, int amountOfPeople) {
-        super(name, job, age, id);
+    public Family(String address, int amountOfPeople) {
         this.address = address;
         this.amountOfPeople = amountOfPeople;
     }
@@ -35,6 +35,19 @@ public class Family extends Person{
         this.amountOfPeople = amountOfPeople;
     }
 
+    public Person create(){
+        System.out.print("Nhập Tên: ");
+        String name = sc.nextLine();
+        System.out.print("Nhập Nghề Nghiệp: ");
+        String job = sc.nextLine();
+        System.out.print("Nhập Tuổi: ");
+        int age = Integer.parseInt(sc.nextLine());
+        System.out.print("Nhập CCCD: ");
+        int id = Integer.parseInt(sc.nextLine());
+
+        return new Person(name, job, age, id);
+    }
+
     public int findByName(String name){
         for (int i = 0; i < personList.size(); i++) {
             if (personList.get(i).getName().equals(name)){
@@ -43,10 +56,14 @@ public class Family extends Person{
         }
         return -1;
     }
-
-    public void add() {
+    public static int numberOfPerson = 1;
+    public List<Person> addPerson() {
+        personList = new ArrayList<>();
+        System.out.println("Nhập thành viên thứ " + numberOfPerson);
         Person person = create();
         personList.add(person);
+        numberOfPerson++;
+        return personList;
     }
 
     public void remove() {
@@ -64,19 +81,8 @@ public class Family extends Person{
 
     public void display() {
         for (int i = 0; i < personList.size(); i++) {
-            System.out.println(personList.get(i));
+            System.out.println((i + 1) + ". " + personList.get(i));
         }
-    }
-
-    public static void main(String[] args) {
-        Family family = new Family();
-        family.add();
-        family.add();
-        family.display();
-//        family.edit();
-        family.remove();
-        family.display();
-        System.out.println("1");
     }
 
 
