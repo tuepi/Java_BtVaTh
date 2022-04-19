@@ -2,7 +2,7 @@ package demo.stack_queue;
 
 import java.util.Stack;
 
-public class A {
+public class DemoStack {
     public static void main(String[] args) {
         Stack<String> s = new Stack<>();
         s.add("a");

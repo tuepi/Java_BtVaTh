@@ -8,7 +8,7 @@ public class KiemTraBieuThuc {
         Stack<Character> stack = new Stack<>();
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Nhập biểu thức: ");
+        System.out.print("Nhập biểu thức cần xét: ");
         String input = sc.nextLine();
         char[] arr = input.toCharArray();
         for (int i = 0; i < arr.length; i++) {
@@ -21,8 +21,6 @@ public class KiemTraBieuThuc {
                     System.out.println("BIỂU THỨC SAI.");
                     break;
                 }
-            } else {
-                continue;
             }
             if (i == arr.length-1){
                 if (!stack.isEmpty()){
