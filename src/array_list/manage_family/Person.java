@@ -47,7 +47,6 @@ public class Person {
     public void setId(int id) {
         this.id = id;
     }
-    Scanner sc = new Scanner(System.in);
 
     @Override
     public String toString() {

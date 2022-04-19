@@ -7,20 +7,19 @@ import java.util.Scanner;
 public class Family{
     private String address;
     private int amountOfPeople;
-    List<Person> personList = new ArrayList<>();
+    private List<Person> personList = new ArrayList<>();
 
     Scanner sc = new Scanner(System.in);
 
     public Family() {
     }
 
-    public Family(String address, int amountOfPeople) {
+    public Family(String address) {
         this.address = address;
-        this.amountOfPeople = amountOfPeople;
     }
 
     public String getAddress() {
-        return address;
+        return this.address;
     }
 
     public void setAddress(String address) {
@@ -48,42 +47,68 @@ public class Family{
         return new Person(name, job, age, id);
     }
 
-    public int findByName(String name){
+    public List<Person> addPerson() {
+        System.out.println("Nhập thành viên thứ " + (this.amountOfPeople + 1));
+        Person person = create();
+        personList.add(person);
+        this.amountOfPeople++ ;
+        return personList;
+    }
+
+    public int findIndexById(int id) {
         for (int i = 0; i < personList.size(); i++) {
-            if (personList.get(i).getName().equals(name)){
+            if (personList.get(i).getId() == id){
                 return i;
             }
         }
         return -1;
     }
-    public static int numberOfPerson = 1;
-    public List<Person> addPerson() {
-        personList = new ArrayList<>();
-        System.out.println("Nhập thành viên thứ " + numberOfPerson);
-        Person person = create();
-        personList.add(person);
-        numberOfPerson++;
-        return personList;
+    public void findByName(String name){
+        for (int i = 0; i < personList.size(); i++) {
+            if (personList.get(i).getName().equals(name)){
+                System.out.println(personList.get(i));
+            }
+        }
     }
 
+
     public void remove() {
-        System.out.print("Nhập tên Thành Viên cần xóa: ");
-        int index = findByName(sc.nextLine());
-        personList.remove(index);
-        System.out.println("đã xóa");
+        System.out.print("Nhập ID Thành Viên cần xóa: ");
+        int index = findIndexById(Integer.parseInt(sc.nextLine()));
+        if (index != -1){
+            personList.remove(index);
+            System.out.println("Đã xóa");
+            this.amountOfPeople--;
+        } else {
+            System.out.println("Không tồn tại.");
+        }
+
     }
 
     public void edit() {
-        System.out.print("Nhập tên Thành Viên cần sửa: ");
-        int index = findByName(sc.nextLine());
+        System.out.print("Nhập ID Thành Viên cần sửa: ");
+        int index = findIndexById(Integer.parseInt(sc.nextLine()));
         personList.set(index, create());
     }
 
     public void display() {
         for (int i = 0; i < personList.size(); i++) {
-            System.out.println((i + 1) + ". " + personList.get(i));
+            System.out.println(personList.get(i));
         }
     }
 
+    public void displayTheYoungest(){
+        int minAge = personList.get(0).getAge();
+        for (int i = 0; i < personList.size(); i++) {
+            if (minAge > personList.get(i).getAge()){
+                minAge = personList.get(i).getAge();
+            }
+        }
+        for (int i = 0; i < personList.size(); i++) {
+            if (minAge == personList.get(i).getAge()){
+                System.out.println(personList.get(i));
+            }
+        }
+    }
 
 }
