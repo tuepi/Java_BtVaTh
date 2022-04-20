@@ -30,6 +30,22 @@ public class Town {
             0.               >>>THOÁT<<<                |
             --------------------------------------------
             """;
+        String menu2 = """
+            ====================MENU====================
+            1.            THÊM HỘ GIA ĐÌNH              |
+            2.          HIỂN THỊ HỘ GIA ĐÌNH            |
+            2.           QUẢN LÝ THÀNH VIÊN             |
+            0.               >>>THOÁT<<<                |
+            --------------------------------------------
+            """;
+        String menu3 = """
+            ====================MENU====================
+            1.            THÊM HỘ GIA ĐÌNH              |
+            2.          HIỂN THỊ HỘ GIA ĐÌNH            |
+            2.           QUẢN LÝ THÀNH VIÊN             |
+            0.               >>>THOÁT<<<                |
+            --------------------------------------------
+            """;
         do {
             System.out.println(menu1);
             System.out.print("Nhập lựa chọn >>> ");
