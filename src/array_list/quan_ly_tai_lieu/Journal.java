@@ -33,9 +33,9 @@ public class Journal extends Document{
 
     @Override
     public String toString() {
-        return  "Journal {" + super.toString() +
-                "issueNumber = " + issueNumber +
-                ", releaseMonth = " + releaseMonth +
+        return  "Tạp Chí {" + super.toString() +
+                ", Số Phát Hành = " + issueNumber +
+                ", Tháng Phát Hành = " + releaseMonth +
                 '}';
     }
 }

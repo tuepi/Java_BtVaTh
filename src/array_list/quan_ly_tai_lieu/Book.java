@@ -32,8 +32,9 @@ public class Book extends Document{
     @Override
     public String toString() {
         return  "Book {" +super.toString() +
-                "authorName = '" + authorName + '\'' +
-                ", pageNumber = " + pageNumber +
+                ", Tác Giả = '" + authorName + '\'' +
+                ", Số Trang = " + pageNumber +
                 '}';
     }
+
 }

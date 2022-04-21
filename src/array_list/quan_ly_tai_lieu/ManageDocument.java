@@ -4,49 +4,92 @@ import array_list.Manage;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class ManageDocument implements Manage<Document> {
-     List<Document> documents = new ArrayList<>();
+    Scanner sc = new Scanner(System.in);
+    List<Document> documents = new ArrayList<>();
     List<Book> books = new ArrayList<>();
     List<Journal> journals = new ArrayList<>();
-    List<Newpaper> newpapers = new ArrayList<>();
-     int id = 1;
+    List<Newspaper> newspaper = new ArrayList<>();
+    int id = 1;
+//    int idBook = 1;
+//    int idJournals = 1;
+//    int idNewspaper = 1;
+
+
     @Override
+    //thêm String type
     public void add(Document document) {
+//        if (type.equals("Book")) {
+//            document.setId(idBook++);
+//            books.add((Book) document);
+//        }
+//        else if (type.equals("Journals")) {
+//            document.setId(idJournals++);
+//            journals.add((Journal) document);
+//        }
+//        else if (type.equals("Newspaper")) {
+//            document.setId(idNewspaper++);
+//            newspaper.add((Newspaper) document);
+////            documents.add((Document)newspaper);
+//        }
+
         document.setId(id++);
         documents.add(document);
+
     }
 
     @Override
     public void edit(int id, Document document) {
-        if (findById(id) != -1){
+        if (findById(id) != -1) {
             documents.set(findById(id), document);
-        }
-        else {
+        } else {
             System.out.println("Không có loại tài liệu đó!!");
         }
     }
 
     @Override
     public void delete(int id) {
-        if (findById(id) != -1){
+        if (findById(id) != -1) {
             documents.remove(findById(id));
-        }else {
-            System.out.println("không có@!");
+        } else {
+            System.out.println("không có!");
         }
     }
 
     @Override
-    public void findByDocument(Document document, int id) {
-        if (findById(id) != -1){
-            System.out.println(documents.get(findById(id)));
+    public void findByDocument(Document document) {
+//        if (findById(id) != -1) {
+//            System.out.println(documents.get(findById(id)));
+//        }
+    }
+
+    public void findByBook() {
+        for (Document d : documents) {
+            if (d instanceof Book)
+                System.out.println(d);
+        }
+    }
+
+    public void findByJournals() {
+        for (Document d : documents) {
+            if (d instanceof Journal)
+                System.out.println(d);
+        }
+    }
+
+    public void findByNewspaper() {
+        for (Document d : documents) {
+            if (d instanceof Newspaper)
+                System.out.println(d);
         }
     }
 
     @Override
     public int findById(int id) {
         for (int i = 0; i < documents.size(); i++) {
-            if (documents.get(i).getId() == id){
+            if (documents.get(i).getId() == id) {
                 return i;
             }
         }
@@ -55,7 +98,7 @@ public class ManageDocument implements Manage<Document> {
 
     @Override
     public Document findObjectByName(int id) {
-        if (findById(id) != -1){
+        if (findById(id) != -1) {
             return documents.get(findById(id));
         } else {
             return null;
@@ -64,10 +107,32 @@ public class ManageDocument implements Manage<Document> {
 
     @Override
     public void display() {
+        System.out.println("Danh sách Tài Liệu: ");
         for (int i = 0; i < documents.size(); i++) {
             System.out.println(documents.get(i));
         }
+//        displayBook();
+//        displayJournals();
+//        displayNewspaper();
     }
+//
+//    public void displayBook() {
+//        for (int i = 0; i < books.size(); i++) {
+//            System.out.println(books.get(i));
+//        }
+//    }
+//
+//    public void displayJournals() {
+//        for (int i = 0; i < journals.size(); i++) {
+//            System.out.println(journals.get(i));
+//        }
+//    }
+//
+//    public void displayNewspaper() {
+//        for (int i = 0; i < newspaper.size(); i++) {
+//            System.out.println(newspaper.get(i));
+//        }
+//    }
 
     @Override
     public void exit() {

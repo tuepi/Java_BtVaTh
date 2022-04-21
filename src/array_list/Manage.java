@@ -9,7 +9,7 @@ public interface Manage<T> {
 
     void delete(int id);
 
-    void findByDocument(T t, int id);
+    void findByDocument(T t);
 
     int findById(int id);
 

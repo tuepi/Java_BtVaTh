@@ -212,6 +212,10 @@ public class QuanLySP {
         System.out.println("------------------------");
     }
 
+    public void setMenuEdit(){
+
+    }
+
     public void sua() {
         System.out.print("Nhập tên Sản Phẩm cần sửa: ");
         String ten = sc.nextLine();
@@ -231,35 +235,40 @@ public class QuanLySP {
                         sanPhams.get(viTriSua).setTen(sc.nextLine());
                         System.out.println("Đã Sửa Tên.");
                         System.out.println("------------------------");
-                        check();
+//                        check();
+                        menu();
                         break;
                     case 2:
                         System.out.print("Sửa lại thành: ");
                         sanPhams.get(viTriSua).setId(Integer.parseInt(sc.nextLine()));
                         System.out.println("Đã Sửa ID.");
                         System.out.println("------------------------");
-                        check();
+//                        check();
+                        menu();
                         break;
                     case 3:
                         System.out.print("Sửa lại thành: ");
                         sanPhams.get(viTriSua).setNhanHieu(sc.nextLine());
                         System.out.println("Đã Sửa Nhãn Hiệu.");
                         System.out.println("------------------------");
-                        check();
+//                        check();
+                        menu();
                         break;
                     case 4:
                         System.out.print("Sửa lại thành: ");
                         sanPhams.get(viTriSua).setGia(Integer.parseInt(sc.nextLine()));
                         System.out.println("Đã Sửa Giá.");
                         System.out.println("------------------------");
-                        check();
+//                        check();
+                        menu();
                         break;
                     case 5:
                         SanPham sp = nhapSP();
                         System.out.println("Đã sửa Sản Phẩm yêu cầu thành: " + sp);
                         sanPhams.set(viTriSua, sp);
                         System.out.println("------------------------");
-                        check();
+//                        check();
+                        menu();
                         break;
                     case 0 :
                         menu();

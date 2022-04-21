@@ -1,12 +1,12 @@
 package array_list.quan_ly_tai_lieu;
 
-public class Newpaper extends Document {
+public class Newspaper extends Document {
     private String releaseDay;
 
-    public Newpaper() {
+    public Newspaper() {
     }
 
-    public Newpaper(String publishingCompany, int releaseNumber, String releaseDay) {
+    public Newspaper(String publishingCompany, int releaseNumber, String releaseDay) {
         super(publishingCompany, releaseNumber);
         this.releaseDay = releaseDay;
     }
@@ -21,8 +21,8 @@ public class Newpaper extends Document {
 
     @Override
     public String toString() {
-        return "Newpaper {" + super.toString() +
-                "releaseDay = " + releaseDay +
+        return "Báo {" + super.toString() +
+                ", Ngày Phát Hành = " + releaseDay +
                 '}';
     }
 }
