@@ -38,7 +38,7 @@ public class SoLanXuatHienCuaTu {
         for (String key : map.keySet()) {
             if (map.get(key) > size / 2) {
                 count = 1;
-                System.out.println("'" + key + " xuất hiện: " + map.get(key) + " lần.");
+                System.out.println("'" + key + "' xuất hiện: " + map.get(key) + " lần.");
             }
         }
         if (count == 0){
