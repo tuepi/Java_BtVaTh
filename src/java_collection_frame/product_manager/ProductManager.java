@@ -8,28 +8,37 @@ import java.util.List;
 public class ProductManager implements Manage<Product>{
 
     List<Product> products = new ArrayList<>();
-    private int size = 0;
-
+//    int count = 1;
 
     @Override
     public void add(Product product) {
+//        product.setId(count++);
         products.add(product);
-        size++;
-
     }
 
+    @Override
+    public int findById(int id) {
+        for (int i = 0; i < products.size(); i++) {
+            if (products.get(i).getId() == id){
+                return i;
+            }
+        }
+        return -1;
+    }
     @Override
     public void edit(int id, Product product) {
         if (findById(id) != -1){
             products.set(findById(id), product);
+        }else {
+            System.out.println("Không có!!");
         }
-        System.out.println("Không có!!");
+
     }
 
     @Override
     public void display() {
         for (int i = 0; i < products.size(); i++) {
-            System.out.println(products.get(i)+""+size);
+            System.out.println(products.get(i));
         }
     }
 
@@ -55,13 +64,5 @@ public class ProductManager implements Manage<Product>{
         Collections.sort(products);
     }
 
-    @Override
-    public int findById(int id) {
-        for (int i = 0; i < products.size(); i++) {
-            if (products.get(i).getId() == id){
-                return i;
-            }
-        }
-        return -1;
-    }
+
 }
