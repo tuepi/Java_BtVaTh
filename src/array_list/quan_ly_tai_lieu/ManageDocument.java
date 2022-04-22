@@ -9,10 +9,11 @@ import java.util.Scanner;
 public class ManageDocument implements Manage<Document> {
     Scanner sc = new Scanner(System.in);
     List<Document> documents = new ArrayList<>();
-    List<Book> books = new ArrayList<>();
-    List<Journal> journals = new ArrayList<>();
-    List<Newspaper> newspaper = new ArrayList<>();
+//    List<Book> books = new ArrayList<>();
+//    List<Journal> journals = new ArrayList<>();
+//    List<Newspaper> newspaper = new ArrayList<>();
     int id = 1;
+
 //    int idBook = 1;
 //    int idJournals = 1;
 //    int idNewspaper = 1;
@@ -21,6 +22,9 @@ public class ManageDocument implements Manage<Document> {
     @Override
     //thêm String type
     public void add(Document document) {
+        document.setId(id++);
+        documents.add(document);
+
 //        if (type.equals("Book")) {
 //            document.setId(idBook++);
 //            books.add((Book) document);
@@ -34,9 +38,6 @@ public class ManageDocument implements Manage<Document> {
 //            newspaper.add((Newspaper) document);
 ////            documents.add((Document)newspaper);
 //        }
-
-        document.setId(id++);
-        documents.add(document);
 
     }
 
@@ -66,24 +67,56 @@ public class ManageDocument implements Manage<Document> {
     }
 
     public void findByBook() {
-        for (Document d : documents) {
-            if (d instanceof Book)
-                System.out.println(d);
+        int count = 0;
+        if (documents.size() != 0) {
+            for (Document d : documents) {
+                if (d instanceof Book) {
+                    System.out.println(d);
+                    count++;
+                }
+
+            }
+            if (count == 0){
+                System.out.println("Không có Sách!!!");
+            }
+        } else {
+            System.out.println("Danh Sách TRỐNG!!!");
         }
+
     }
 
     public void findByJournals() {
-        for (Document d : documents) {
-            if (d instanceof Journal)
-                System.out.println(d);
+        int count = 0;
+        if (documents.size() != 0) {
+            for (Document d : documents) {
+                if (d instanceof Journal)
+                    System.out.println(d);
+                count++;
+            }
+            if (count == 0){
+                System.out.println("Không có Tạp Chí!!!");
+            }
+        } else {
+            System.out.println("Danh Sách TRỐNG!!!");
         }
+
     }
 
     public void findByNewspaper() {
-        for (Document d : documents) {
-            if (d instanceof Newspaper)
-                System.out.println(d);
+        int count = 0;
+        if (documents.size() != 0){
+            for (Document d : documents) {
+                if (d instanceof Newspaper)
+                    System.out.println(d);
+                    count++;
+            }
+            if (count == 0){
+                System.out.println("Không có Báo!!!");
+            }
+        } else {
+            System.out.println("Danh Sách TRỐNG!!!");
         }
+
     }
 
     @Override
@@ -107,10 +140,15 @@ public class ManageDocument implements Manage<Document> {
 
     @Override
     public void display() {
-        System.out.println("Danh sách Tài Liệu: ");
-        for (int i = 0; i < documents.size(); i++) {
-            System.out.println(documents.get(i));
+        if (documents.size() != 0){
+            System.out.println("Danh sách Tài Liệu: ");
+            for (int i = 0; i < documents.size(); i++) {
+                System.out.println(documents.get(i));
+            }
+        } else {
+            System.out.println("Danh Sách TRỐNG!!!");
         }
+
 //        displayBook();
 //        displayJournals();
 //        displayNewspaper();

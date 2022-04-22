@@ -50,8 +50,7 @@ public class Main {
                 ===============THÊM===============
                 1.             SÁCH
                 2.             TẠP CHÍ
-                3.             BÁO
-                                
+                3.             BÁO              
                 0.       >>>TRỞ LẠI MENU<<<
                 ---------------------------------
                 Nhập lựa chọn >>> 
@@ -129,6 +128,7 @@ public class Main {
             menu();
             return true;
         } else if (choice.equals("n")) {
+            System.exit(0);
             return false;
         } else {
             System.out.println("Vui Lòng chọn lại.");
