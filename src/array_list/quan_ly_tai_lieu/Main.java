@@ -81,6 +81,8 @@ public class Main {
                             case 0:
                                 menu();
                                 break;
+                            default:
+                                System.out.print("Vui lòng chọn lại (0 >>> 3): ");
                         }
                     } while (true);
 
@@ -88,47 +90,55 @@ public class Main {
                     System.out.print("Nhập vào Mã tài liệu cần xóa: ");
                     int id = Integer.parseInt(sc.nextLine());
                     manageDocument.delete(id);
+                    checkMenu();
                     break;
                 case 3:
                     manageDocument.display();
+                    checkMenu();
                     break;
                 case 4:
                     System.out.println("Danh sách Sách: ");
                     manageDocument.findByBook();
+                    checkMenu();
                     break;
                 case 5:
                     System.out.println("Danh sách Tạp Chí: ");
                     manageDocument.findByJournals();
+                    checkMenu();
                     break;
                 case 6:
                     System.out.println("Danh sách Báo: ");
                     manageDocument.findByNewspaper();
+                    checkMenu();
                     break;
                 case 0:
                     System.exit(0);
                     break;
+                default:
+                    System.out.println("Vui lòng chọn lại (0 >>> 6): ");
             }
 
         } while (true);
 
     }
 
-    public boolean check() {
+    public static boolean checkMenu() {
         System.out.print("Tiếp tục (Y / N) >>> ");
         String choice = sc.nextLine().toLowerCase(Locale.ROOT);
         if (choice.equals("y")) {
+            menu();
             return true;
         } else if (choice.equals("n")) {
             return false;
         } else {
             System.out.println("Vui Lòng chọn lại.");
-            check();
+            checkMenu();
             return true;
         }
     }
 
     public static void addBook() {
-        System.out.print("Thêm Sách: ");
+        System.out.println("Thêm SÁCH: ");
         System.out.print("Nhập Tên Nhà Xuất Bản: ");
         String publishingCompany = sc.nextLine();
         System.out.print("Nhập Số Bản Phát Hành: ");
@@ -142,7 +152,7 @@ public class Main {
     }
 
     public static void addJournals() {
-        System.out.print("Thêm Tạp Chí: ");
+        System.out.println("Thêm TẠP CHÍ: ");
         System.out.print("Nhập Tên Nhà Xuất Bản: ");
         String publishingComp = sc.nextLine();
         System.out.print("Nhập Số Bản Phát Hành: ");
@@ -157,7 +167,7 @@ public class Main {
     }
 
     public static void addNewspaper() {
-        System.out.print("Thêm Báo: ");
+        System.out.println("Thêm BÁO: ");
         System.out.print("Nhập Tên Nhà Xuất Bản: ");
         String publishingNews = sc.nextLine();
         System.out.print("Nhập Số Bản Phát Hành: ");
