@@ -20,7 +20,7 @@ public class ManageUser {
             ==================QUẢN LÝ===================
             1.      ĐẾN TRANG QUẢN LÝ SẢN PHẨM          | 
             2.          THÔNG TIN TÀI KHOẢN             |
-            0.              >>>THOÁT<<<                 |
+            0.            >>>ĐĂNG XUẤT<<<               |
             --------------------------------------------
             """;
 

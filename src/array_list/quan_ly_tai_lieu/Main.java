@@ -1,5 +1,7 @@
 package array_list.quan_ly_tai_lieu;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -32,8 +34,18 @@ public class Main {
 
     static Scanner sc = new Scanner(System.in);
     static ManageDocument manageDocument = new ManageDocument();
+    static List<Document> documents = new ArrayList<>();
+    List<Account> accounts = new ArrayList<>();
 
     static public void menu() {
+        String menuLogin = """
+                =============TÀI KHOẢN============
+                1.           ĐĂNG NHẬP
+                2.            ĐĂNG KÝ
+                0.          >>>THOÁT<<<
+                ---------------------------------
+                """;
+
         String menu = """
                 ===============MENU===============
                 1.             THÊM
@@ -46,10 +58,11 @@ public class Main {
                 ---------------------------------
                 Nhập lựa chọn >>> 
                 """;
+
         String menuAdd = """
                 ===============THÊM===============
                 1.             SÁCH
-                2.             TẠP CHÍ
+                2.           TẠP CHÍ
                 3.             BÁO              
                 0.       >>>TRỞ LẠI MENU<<<
                 ---------------------------------
@@ -57,67 +70,101 @@ public class Main {
                 """;
 
         do {
-            System.out.print(menu);
+            System.out.println(menuLogin);
+            System.out.print("Nhập lựa chọn >>> ");
             int choice = Integer.parseInt(sc.nextLine());
-            System.out.println("---------------------------------");
 
             switch (choice) {
                 case 1:
-                    do {
-                        System.out.println(menuAdd);
-                        int choiceAdd = Integer.parseInt(sc.nextLine());
-                        System.out.println("---------------------------------");
-                        switch (choiceAdd) {
-                            case 1:
-                                addBook();
-                                break;
-                            case 2:
-                                addJournals();
-                                break;
-                            case 3:
-                                addNewspaper();
-                                break;
-                            case 0:
-                                menu();
-                                break;
-                            default:
-                                System.out.print("Vui lòng chọn lại (0 >>> 3): ");
-                        }
-                    } while (true);
 
+                    break;
                 case 2:
-                    System.out.print("Nhập vào Mã tài liệu cần xóa: ");
-                    int id = Integer.parseInt(sc.nextLine());
-                    manageDocument.delete(id);
-                    checkMenu();
-                    break;
-                case 3:
-                    manageDocument.display();
-                    checkMenu();
-                    break;
-                case 4:
-                    System.out.println("Danh sách Sách: ");
-                    manageDocument.findByBook();
-                    checkMenu();
-                    break;
-                case 5:
-                    System.out.println("Danh sách Tạp Chí: ");
-                    manageDocument.findByJournals();
-                    checkMenu();
-                    break;
-                case 6:
-                    System.out.println("Danh sách Báo: ");
-                    manageDocument.findByNewspaper();
-                    checkMenu();
+
                     break;
                 case 0:
                     System.exit(0);
-                    break;
                 default:
-                    System.out.println("Vui lòng chọn lại (0 >>> 6): ");
+                    System.out.println("Vui lòng chọn lại (0 >>> 2): ");
             }
 
         } while (true);
+
+//        do {
+//            System.out.print(menu);
+//            int choice = Integer.parseInt(sc.nextLine());
+//            System.out.println("---------------------------------");
+//
+//            switch (choice) {
+//                case 1:
+//                    do {
+//                        System.out.println(menuAdd);
+//                        int choiceAdd = Integer.parseInt(sc.nextLine());
+//                        System.out.println("---------------------------------");
+//                        switch (choiceAdd) {
+//                            case 1:
+//                                addBook();
+//                                break;
+//                            case 2:
+//                                addJournals();
+//                                break;
+//                            case 3:
+//                                addNewspaper();
+//                                break;
+//                            case 0:
+//                                menu();
+//                                break;
+//                            default:
+//                                System.out.print("Vui lòng chọn lại (0 >>> 3): ");
+//                        }
+//                    } while (true);
+//
+//                case 2:
+//                    System.out.print("Nhập vào Mã tài liệu cần xóa: ");
+//                    int id = Integer.parseInt(sc.nextLine());
+//                    manageDocument.delete(id);
+//                    checkMenu();
+//                    break;
+//                case 3:
+//                    manageDocument.display();
+//                    checkMenu();
+//                    break;
+//                case 4:
+//                    System.out.println("Danh sách Sách: ");
+//                    manageDocument.findByBook();
+//                    checkMenu();
+//                    break;
+//                case 5:
+//                    System.out.println("Danh sách Tạp Chí: ");
+//                    manageDocument.findByJournals();
+//                    checkMenu();
+//                    break;
+//                case 6:
+//                    System.out.println("Danh sách Báo: ");
+//                    manageDocument.findByNewspaper();
+//                    checkMenu();
+//                    break;
+//                case 0:
+//                    System.exit(0);
+//                    break;
+//                default:
+//                    System.out.println("Vui lòng chọn lại (0 >>> 6): ");
+//            }
+//
+//        } while (true);
+
+    }
+
+    public static void login(){
+        System.out.print("Nhập tên đăng nhập: ");
+        String name = sc.nextLine();
+        System.out.print("Nhập Mật khẩu: ");
+        String pass = sc.nextLine();
+        String pass1;
+        do {
+            System.out.print("Nhập lại Mật khẩu: ");
+            pass1 = sc.nextLine();
+        } while (pass != pass1);
+
 
     }
 

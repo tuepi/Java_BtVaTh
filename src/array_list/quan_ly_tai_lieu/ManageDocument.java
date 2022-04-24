@@ -6,9 +6,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+import static array_list.quan_ly_tai_lieu.Main.documents;
+
 public class ManageDocument implements Manage<Document> {
     Scanner sc = new Scanner(System.in);
-    List<Document> documents = new ArrayList<>();
+//    static List<Document> documents = new ArrayList<>();
 //    List<Book> books = new ArrayList<>();
 //    List<Journal> journals = new ArrayList<>();
 //    List<Newspaper> newspaper = new ArrayList<>();
