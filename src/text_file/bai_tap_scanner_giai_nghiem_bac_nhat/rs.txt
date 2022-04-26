@@ -1,0 +1,6 @@
+
+Phương trình có nghiệm: -0.6666666666666666
+Tổng là:  21
+Tích là: 1152
+Max là: 6
+Min là: 2

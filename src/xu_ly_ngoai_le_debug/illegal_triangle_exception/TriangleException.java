@@ -8,7 +8,5 @@ public class TriangleException extends Exception{
     public String getMessage() {
         return "Không thỏa mãn điều kiện là 3 cạnh của một tam giác.";
     }
-
-
 }
 

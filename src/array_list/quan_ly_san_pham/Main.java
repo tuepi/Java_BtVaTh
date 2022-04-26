@@ -6,6 +6,14 @@ public class Main {
     static ManageUser manageUser;
     public static void main(String[] args) {
         manageUser = new ManageUser();
-        manageUser.menu();
+        set();
+    }
+    public static void set(){
+        try {
+            manageUser.menu();
+        } catch (Exception e){
+            System.out.println("Nhập sai định dạng.");
+            set();
+        }
     }
 }
