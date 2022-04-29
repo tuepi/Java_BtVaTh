@@ -13,8 +13,7 @@ public class DocFileVaHienThiFileCSV {
 //            arr = sc.nextLine().split(",");
 //            System.out.println(arr[2]);
             arr = sc.nextLine().split(" ");
-            for (String i : arr
-                 ) {
+            for (String i : arr) {
                 System.out.print(i);
             }
             System.out.println("\n");
